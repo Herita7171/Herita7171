@@ -1,4 +1,6 @@
-### Hi there 👋
+## Personal Project Compilation
+#### Description
+This folder contains some coding practice and projects I have worked on. More content will be added in the following weeks.
 
 <!--
 **Herita7171/Herita7171** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
