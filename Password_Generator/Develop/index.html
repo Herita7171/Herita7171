@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1 style="font-size: 2em; font-weight: bold; display: block;">Password Generator</h1>
+      </header>
+      <div class="card">
+        <div class="card-header" style="background-color: white; border-bottom: 0px;">
+          <h2 style="font-size: 1.5em; font-weight: bold;">Generate a Password</h2>
+        </div>
+        <div class="card-body">
+          <textarea
+            readonly
+            id="password"
+            placeholder="Your Secure Password"
+            aria-label="Generated Password"
+            style="margin: 0em; font-family: monospace;"
+          ></textarea>
+        </div>
+        <div class="card-footer" style="border-top: 0px; background-color: white;">
+          <button id="generate" class="btn">Generate Password</button>
+          <script>
+              var generateBtn = document.querySelector("#generate");
+              generateBtn.onclick = function() {
+                document.getElementById("lenInput").value = null;
+                document.getElementById("Lowercase").checked = false;
+                document.getElementById("Uppercase").checked = false;
+                document.getElementById("Numeric").checked = false;
+                document.getElementById("Special").checked = false;
+                modal.style.display = "block";
+              }
+          </script>
+        </div>
+      </div>
+
+      <div class="modal" tabindex="-1" id="MyModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Welcome to the Password Generator!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                <script>
+                    var span = document.getElementsByClassName("close")[0];
+                    span.onclick = function() {
+                      modal.style.display = "none";
+                    }
+                </script>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Please specify your password criteria:</p>
+              <div class="form-group">
+                <label for="lenInput">Length</label>
+                <input type="text" class="form-control" id="lenInput" placeholder="At least 8 and no more than 128" value="">
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="Lowercase">
+                <label class="form-check-label" for="Lowercase">
+                  Lowercase Letters
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="Uppercase">
+                <label class="form-check-label" for="Uppercase">
+                  Uppercase Letters
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="Numeric">
+                <label class="form-check-label" for="Numeric">
+                  Numeric Characters
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="Special">
+                <label class="form-check-label" for="Special">
+                  Special Characters
+                </label>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary" id="Continue">Continue</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
