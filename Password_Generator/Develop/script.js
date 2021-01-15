@@ -27,7 +27,7 @@ function generatePassword() {
       document.getElementById("lenInput").value = lengthInput;
       // if no character type is chosen
       while (!ifLowercase && !ifUppercase && !ifNumeric && !ifSpecial) {
-          alert("Please choose at least on character type!");
+          alert("Please choose at least one character type!");
           ifLowercase = confirm("Would you like to include lowercase letters?");
           ifUppercase = confirm("Would you like to include uppercase letters?");
           ifNumeric = confirm("Would you like to include numeric characters?");
